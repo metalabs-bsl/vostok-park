@@ -3,6 +3,7 @@
 import { FC, useState } from "react";
 import styles from "./Hero.module.scss";
 import { Form } from "../../components/Form";
+import axios from "axios";
 
 export interface FormData {
   name: string;
@@ -20,17 +21,33 @@ export const Hero: FC = () => {
 
   const sendMessageToTelegram = async (message: string) => {
     try {
-      const response = await fetch("/api/sendMessage", {
-        method: "POST",
+      const botToken = "7771480515:AAGOeW4D2mT6FI7YmrF0ElcBkVbacY_Uvz0";
+      const chatId = "-1002482006419";
+      const url = `https://api.telegram.org/bot${botToken}/sendMessage`;
+
+      const telegramMessage = {
+        chat_id: chatId,
+        text: message,
+        parse_mode: "Markdown",
+      };
+
+      const response = await axios.post(url, telegramMessage, {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ message }),
       });
+      console.log(response);
+      // const response = await fetch("/api/sendMessage", {
+      //   method: "POST",
+      //   headers: {
+      //     "Content-Type": "application/json",
+      //   },
+      //   body: JSON.stringify({ message }),
+      // });
 
-      if (!response.ok) {
-        throw new Error("Failed to send message");
-      }
+      // if (!response.ok) {
+      //   throw new Error("Failed to send message");
+      // }
 
       console.log("Message sent successfully");
       setSuccess(true);
