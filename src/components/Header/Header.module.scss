@@ -1,0 +1,235 @@
+.header {
+    max-width: 100%;
+    margin-bottom: 1.25rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.6875rem 2.4375rem;
+    background: var(--accent-dark);
+    z-index: 1000;
+    border-radius: 0.9375rem;
+    .logo__navigation_container {
+        display: flex;
+        align-items: center;
+        gap: 3.75rem;
+        .header__logo {
+            display: flex;
+            gap: 0.625rem;
+            align-items: center;
+            .vostok__logo {
+                width: 95px;
+                height: 46px;
+                background-image: url(../../../public/images/logo/header_logo.svg);
+            }
+            .yandex__logo {
+                width: 128.999px;
+                height: 44px;
+            }
+        }
+    }
+
+    &__nav ul {
+        font-size: 1.125rem;
+        font-weight: 400;
+        display: flex;
+        align-items: center;
+        gap: 2.5rem;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    &__nav a {
+        text-decoration: none;
+        color: var(--light-main);
+    }
+
+    &__phone__number {
+        display: flex;
+        align-items: center;
+        gap: 0.3125rem;
+        font-size: 1.125rem;
+        cursor: pointer;
+        span {
+            color: var(--light-main);
+        }
+        .phone__logo {
+            width: 1.5rem;
+            height: 1.5rem;
+            color: #000;
+            background-image: url(../../../public/images/logo/phone_call.svg);
+            transition: 0.6s;
+        }
+        &:hover {
+            .phone__logo {
+                background-image: url(../../../public/images/logo/hoverPhoneLogo.svg);
+            }
+        }
+    }
+    .menu__button {
+        display: none;
+        width: 2.125rem;
+        height: 2.125rem;
+        cursor: pointer;
+        .open__modal {
+            display: none;
+        }
+    }
+
+    .contact__section {
+        display: flex;
+        align-items: center;
+        gap: 3.75rem;
+    }
+
+    @media (max-width: 1285px) {
+        .phone__number {
+            font-size: 1rem;
+        }
+        .contact__section {
+            gap: 1.875rem;
+        }
+        .logo__navigation_container {
+            gap: 2.5rem;
+        }
+    }
+
+    @media (max-width: 1220px) {
+        .header__nav ul {
+            font-size: 1rem;
+            gap: 1.875rem;
+        }
+    }
+
+    @media (max-width: 1170px) {
+        .header {
+            gap: 1.25rem;
+        }
+        .phone__number {
+            font-size: 1rem;
+        }
+        .contact__section {
+            gap: 1.25rem;
+        }
+        .logo__navigation_container {
+            gap: 1.25rem;
+        }
+        .header__nav ul {
+            gap: 1.25rem;
+        }
+    }
+
+    @media (max-width: 1090px) {
+        margin-bottom: 0.625rem;
+        .vostok__logo {
+            h2 {
+                font-size: 1.25rem;
+            }
+        }
+        .yandex__logo {
+            width: 7.1875rem;
+            height: 1.875rem;
+        }
+        .tarifs {
+            text-overflow: ellipsis;
+        }
+    }
+
+    @media (max-width: 1095px) {
+        .header {
+            border-radius: 0.625rem;
+        }
+        padding: 1.3125rem 1.0625rem;
+        .vostok__logo {
+            h2 {
+                font-size: 1.3424rem;
+                font-weight: 700;
+                line-height: 120%;
+                letter-spacing: 0.0134rem;
+            }
+            p {
+                font-size: 0.9294rem;
+                font-weight: 700;
+                line-height: 120%;
+            }
+        }
+        .yandex__logo {
+            width: 6.3749rem;
+            height: 2.125rem;
+        }
+
+        .gap__tablet_adaptive {
+            display: flex;
+            align-items: center;
+            gap: 2.5rem;
+        }
+        .menu__button {
+            display: block;
+        }
+        &__nav {
+            display: none;
+        }
+
+        &__logo {
+            width: 5.625rem;
+            height: 3.75rem;
+        }
+    }
+}
+
+@media (max-width: 640px) {
+    .header {
+        padding: 0.5625rem 0.625rem;
+        font-size: 1rem;
+        margin-bottom: 0.3125rem;
+        .contact__section {
+            display: none;
+        }
+    }
+}
+
+.close__icon {
+    position: absolute;
+    right: 2rem;
+    top: 1.4375rem;
+    cursor: pointer;
+}
+
+.modal__nav ul {
+    color: #000;
+    list-style: none;
+    font-size: 1.125rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.875rem;
+    @media (max-width: 640px) {
+        gap: 1.25rem;
+    }
+}
+
+.contact__section_modal {
+    display: none;
+    span {
+        color: #000;
+    }
+    .phone__logo {
+        width: 1.5rem;
+        height: 1.5rem;
+        color: #000;
+        background-image: url(../../../public/images/logo/hoverPhoneLogo.svg);
+        transition: 0.6s;
+    }
+    @media (max-width: 640px) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        color: #000;
+        gap: 3.1875rem;
+        transition: 0.6s;
+        .modal__nav ul {
+            gap: 0.125rem;
+        }
+    }
+    margin-top: 3.1875rem;
+}

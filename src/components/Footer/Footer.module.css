@@ -1,0 +1,287 @@
+.footer {
+  background: var(--accent-dark);
+  border-radius: 15px;
+  padding: 30px 40px;
+  margin-top: 20px;
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title {
+  font-weight: 400;
+  font-size: 18px;
+  color: var(--light-background);
+}
+
+.apps {
+  margin-top: 10px;
+}
+
+.app:not(:last-child) {
+  margin-right: 15px;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.link {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 62px;
+  height: 62px;
+  border-radius: 10px;
+  background-color: var(--light-background);
+  position: relative;
+}
+
+.link_warn {
+  background-color: var(--accent-yellow);
+}
+
+.link svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+.icon_top {
+  transition: all 0.5s ease;
+  opacity: 1;
+}
+
+.icon_bottom {
+  transition: all 0.5s ease;
+  opacity: 0;
+}
+
+.link:hover .icon_top {
+  opacity: 0;
+  stroke: url(#instagram-gradient);
+}
+
+.link:hover .icon_bottom {
+  opacity: 1;
+}
+
+.btn {
+  border-radius: 10px;
+  width: 119px;
+  height: 62px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--light-main);
+  margin-left: 15px;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: var(--accent-yellow);
+}
+
+.line {
+  border: none;
+  height: 1px;
+  background-color: var(--secondary-grey);
+  margin: 30px 0 15px;
+}
+
+.desc {
+  font-weight: 400;
+  font-size: 16px;
+  color: var(--secondary-grey);
+}
+
+.desc:nth-child(2) {
+  margin-top: 5px;
+}
+
+.mt_30 {
+  margin-top: 30px;
+}
+
+@media (max-width: 910px) {
+  .footer {
+    padding: 20px 17px;
+    border-radius: 10px;
+  }
+
+  .title {
+    font-size: 16px;
+  }
+
+  .apps .app:nth-of-type(1) > img {
+    width: 118px;
+    height: 40px;
+  }
+
+  .apps .app:nth-of-type(2) > img {
+    width: 135px;
+    height: 40px;
+  }
+
+  .apps {
+    gap: 10px;
+  }
+
+  .app:not(:last-child) {
+    margin-right: 15px;
+  }
+
+  .link {
+    width: 46px;
+    height: 46px;
+    border-radius: 8px;
+  }
+
+  .link svg {
+    width: 23.74px;
+    height: 23.74px;
+  }
+
+  .link:hover .icon_top {
+    opacity: 1;
+    stroke: none;
+  }
+
+  .link:hover .icon_bottom {
+    opacity: 0;
+  }
+
+  .icon_top,
+  .icon_bottom {
+    transition: opacity 0.5s ease;
+  }
+
+  .link:active .icon_bottom {
+    opacity: 1;
+  }
+
+  .btn {
+    width: 46px;
+    height: 46px;
+    border-radius: 8px;
+    margin-left: 20px;
+  }
+
+  .btn:hover {
+    background: var(--light-main);
+  }
+
+  .hide {
+    display: none;
+  }
+
+  .line {
+    margin: 20px 0 10px;
+  }
+
+  .mt_30 {
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 650px) {
+  .footer {
+    margin-top: 10px;
+  }
+  .top {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .title {
+	text-align: center;
+  }
+
+  .apps {
+	width: 310px;
+	display: flex;
+	gap: 80px;
+  }
+
+  .apps .app:nth-of-type(1) > img {
+    width: calc(118px + 13%);
+    height: calc(40px + 13%);
+  }
+
+  .apps .app:nth-of-type(2) > img {
+    width: calc(135px + 13%);
+    height: calc(40px + 13%);
+  }
+
+}
+
+@media (max-width: 430px) {
+  .footer {
+    border-radius: 6px;
+    padding: 20px 6px;
+    margin-top: 5px;
+  }
+
+  .title {
+    font-size: 14px;
+	text-align: center;
+  }
+
+  .apps {
+	width: 255px;
+	display: flex;
+	gap: 56px;
+  }
+
+  .app:not(:last-child) {
+	margin-right: 5px;
+  }
+
+  .apps .app:nth-of-type(1) > img {
+    width: calc(94px + 20%);
+    height: calc(32px + 20%);
+  }
+
+  .apps .app:nth-of-type(2) > img {
+    width: calc(108px + 20%);
+    height: calc(32px + 20%);
+  }
+
+  .nav {
+    gap: 10px;
+  }
+
+  .link {
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+  }
+
+  .link svg {
+    width: 20.75px;
+    height: 20.75px;
+  }
+
+  .btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+    margin-left: 15px;
+  }
+
+  .desc {
+    font-size: 12px;
+  }
+
+  .desc:nth-child(2) {
+    margin-top: 10px;
+  }
+}

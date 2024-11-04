@@ -1,0 +1,424 @@
+.form_container {
+    max-width: 612px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form_content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 612px;
+    height: 100%;
+    border-radius: 15px;
+    background: var(--light-background);
+    padding: 50px 40px;
+    align-items: flex-start;
+}
+
+.top_content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+}
+
+.title {
+    width: 100%;
+    font-weight: 700;
+    font-size: 38px;
+    /* 2.375rem = 38px */
+    color: var(--accent-dark);
+    margin-bottom: 50px;
+}
+
+.label {
+    color: var(--accent-dark);
+    font-weight: 400;
+    font-size: 16px;
+    /* 1rem = 16px */
+}
+
+.required {
+    text-align: right;
+    width: 100%;
+    font-size: 14.4px;
+    /* 0.9rem = 14.4px */
+    color: var(--secondary-grey);
+}
+
+.input_name,
+.input_phone {
+    appearance: none;
+    font-size: 18px;
+    padding: 15px 10px;
+    width: 100%;
+    height: 55px;
+    background: var(--light-main);
+    border-radius: 10px;
+    border: 1px solid transparent;
+    margin-bottom: 20px;
+    transition: background 0.6s, border-color 0.6s;
+    outline: none;
+}
+
+.input_name:focus::placeholder,
+.input_phone:focus::placeholder {
+    color: transparent;
+}
+
+.input_name:focus,
+.input_phone:focus {
+    background: var(--light-background);
+    border-color: var(--accent-dark);
+}
+
+.middle_content {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.wrapper_inp {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.bottom_content {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+}
+
+.checkbox_container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.custom_checkbox {
+    display: none;
+}
+
+.label_checkbox::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 24px;
+    height: 24px;
+    border: 1px solid var(--accent-dark);
+    border-radius: 4px;
+    background: var(--light-background);
+    transition: background 0.3s, border-color 0.3s;
+}
+
+.label_checkbox {
+    position: relative;
+    cursor: pointer;
+    padding-left: 34px;
+    font-size: 16px;
+    color: var(--secondary-grey);
+}
+
+.label_checkbox::after {
+    content: "";
+    position: absolute;
+    left: 10.5px;
+    top: 45%;
+    transform: translateY(-50%) rotate(35deg) skewY(5deg);
+    width: 5px;
+    height: 16px;
+    border: solid var(--light-main);
+    border-width: 0 2px 2px 0;
+    opacity: 1;
+    transition: 0.6s;
+}
+
+.custom_checkbox:checked+.label_checkbox::before {
+    background: var(--accent-dark);
+    border-color: var(--accent-dark);
+    transition: 0.6s;
+}
+
+.custom_checkbox:checked+.label_checkbox::after {
+    border-color: var(--accent-yellow);
+}
+
+.label_checkbox.error::before {
+    border-color: red;
+}
+
+
+.terms {
+    color: var(--accent-dark);
+}
+
+.submit_button {
+    width: 100%;
+    height: 55px;
+    border-radius: 10px;
+    padding: 12px;
+    font-size: 22px;
+    /* 1.375rem = 22px */
+    background: var(--accent-dark);
+    color: var(--light-background);
+    border: 1px solid black;
+    cursor: pointer;
+    margin: 0 auto;
+    transition: 0.6s;
+}
+
+.submit_button:hover {
+    border: none;
+    background: var(--accent-yellow);
+    color: var(--accent-dark);
+}
+
+/* Новый стиль для неактивной кнопки */
+.submit_button:disabled {
+    background: var(--secondary-grey);
+    /* Цвет фона для неактивной кнопки */
+    color: var(--light-background);
+    /* Цвет текста для неактивной кнопки */
+    cursor: not-allowed;
+    /* Указатель для неактивной кнопки */
+    opacity: 0.5;
+    /* Сделать кнопку полупрозрачной */
+}
+
+.error {
+    border-color: red !important;
+}
+.required.error {
+    color: red; // Цвет текста для ошибки
+}
+
+
+
+@media (max-width: 1095px) {
+    .title {
+        font-weight: 600;
+        font-size: 32px;
+        /* 2rem = 32px */
+        margin-bottom: 20px;
+    }
+
+    .form_content {
+        padding: 30px 40px;
+        border-radius: 10px;
+        width: 100%;
+        max-width: 612px;
+    }
+
+    .required {
+        font-size: 14px;
+        /* 0.875rem = 14px */
+    }
+
+    .label {
+        font-size: 14px;
+        /* 0.875rem = 14px */
+    }
+
+    .input_name,
+    .input_phone {
+        padding: 10px;
+        font-size: 16px;
+        /* 1rem = 16px */
+        height: 42px;
+        border-radius: 8px;
+    }
+
+    .input_name:focus::placeholder,
+    .input_phone:focus::placeholder {
+        color: transparent;
+    }
+
+    .input_name:focus,
+    .input_phone:focus {
+        background: var(--light-background);
+    }
+
+    .middle_content {
+        margin-bottom: 0;
+    }
+
+    .bottom_content {
+        gap: 20px;
+    }
+
+    .label_checkbox {
+        font-size: 14px;
+        /* 1rem = 14px */
+    }
+
+    .submit_button {
+        border-radius: 10px;
+        height: 45px;
+        padding: 10px;
+        font-size: 18px;
+        /* 1.125rem = 18px */
+    }
+}
+
+@media (max-width: 835px) {
+    .title {
+        font-size: 32px;
+        /* 2rem = 32px */
+    }
+
+    .input_name,
+    .input_phone {
+        font-size: 16px;
+        /* 1rem = 16px */
+    }
+
+    .submit_button {
+        font-size: 18px;
+        /* 1.125rem = 18px */
+    }
+
+    .label {
+        font-size: 16px;
+        /* 1rem = 16px */
+    }
+
+    .label_checkbox {
+        font-size: 16px;
+        /* 1rem = 16px */
+    }
+}
+
+@media (max-width: 768px) {
+
+    .input_name,
+    .input_phone,
+    .submit_button {
+        height: 45px;
+        font-size: 16px;
+        /* 1rem = 16px */
+    }
+}
+
+@media (max-width: 592px) {
+    .middle_content {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 550px) {
+    .form_content {
+        padding: 20px;
+    }
+
+    .title {
+        font-size: 24px;
+        /* 1.5rem = 24px */
+    }
+
+    .submit_button {
+        font-size: 18px;
+        /* 1.125rem = 18px */
+    }
+}
+
+@media (max-width: 477px) {
+    .label_checkbox {
+        font-size: 12px;
+        /* 0.75rem = 12px */
+    }
+
+    .required {
+        max-width: 146px;
+        /* Ограничиваем максимальную ширину */
+        width: 100%;
+        /* Устанавливаем ширину на 100% */
+        text-align: right;
+        /* Выравниваем текст по правому краю */
+        margin-left: auto;
+        /* Сдвигаем элемент вправо, если это необходимо */
+        margin-right: 0;
+        /* Убираем отступ справа */
+    }
+}
+
+@media (max-width: 448px) {
+
+    .title {
+        font-size: 28px;
+        /* 1.75rem = 28px */
+        margin-bottom: 20px;
+        font-weight: 600;
+    }
+
+    .required {
+        font-size: 12px;
+        line-height: 120%;
+    }
+
+    .top_content {
+        gap: 0;
+    }
+
+    .top_content .label {
+        margin-bottom: 5px;
+    }
+
+    .middle_content {
+        gap: 5px;
+        margin-bottom: 20px;
+    }
+
+    .bottom_content {
+        gap: 20px;
+    }
+
+    .input_phone,
+    .input_name {
+        height: 35px;
+        padding: 8px;
+        font-size: 14px;
+        margin-bottom: 5px;
+        height: 35px;
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    .label {
+        font-size: 12px;
+        margin-bottom: -5px;
+    }
+
+    .middle_content {
+        gap: 0;
+    }
+
+    .submit_button {
+        height: 38px;
+        font-size: 16px;
+        padding: 8px;
+    }
+
+    .label_checkbox::before {
+        width: 20px;
+        height: 20px;
+    }
+
+    .label_checkbox::after {
+        left: 9px;
+        top: 45%;
+        width: 4px;
+        height: 14px;
+    }
+}
+
+// @media (max-width: 357px) {
+
+// }

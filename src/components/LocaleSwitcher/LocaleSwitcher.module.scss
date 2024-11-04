@@ -1,0 +1,79 @@
+.translate {
+  display: flex;
+  gap: 0.3125rem;
+  font-size: 1.125rem;
+  input {
+      display: none;
+  }
+  label {
+      cursor: pointer;
+      color: var(--secondary-grey);
+  }
+  .language {
+      transition: 0.5s;
+  }
+
+  .language__ru {
+      color: var(--light-background);
+      position: relative;
+      transition: 0.5s;
+      &::after {
+          content: "";
+          position: absolute;
+          width: 1.5625rem;
+          left: 0;
+          bottom: 0;
+          top: 1.8125rem;
+          height: 0.0625rem;
+          background-color: var(--accent-orange);
+          transition: 3s;
+      }
+  }
+  .language__kg {
+      color: var(--light-background);
+      position: relative;
+      transition: 0.5s;
+      &::after {
+          content: "";
+          position: absolute;
+          width: 1.5625rem;
+          left: 0;
+          bottom: 0;
+          top: 1.8125rem;
+          height: 0.0625rem;
+          transform-origin: left;
+          background-color: var(--accent-orange);
+          transition: opacity 1s ease-in-out;
+      }
+  }
+
+  .text__kg {
+      position: relative;
+      &::after {
+          content: "";
+          position: absolute;
+          width: 1.5625rem;
+          left: 0;
+          bottom: 0;
+          top: 1.8125rem;
+          height: 0.0625rem;
+          background-color: var(--accent-orange);
+          transition: 0.3s;
+      }
+  }
+}
+
+@media (max-width: 640px) {
+  .translate {
+      .language {
+          color: var(--accent-dark);
+          transition: 0.5s;
+      }
+      .language__kg {
+          color: var(--accent-dark);
+      }
+      .language__ru {
+          color: var(--accent-dark);
+      }
+  }
+}

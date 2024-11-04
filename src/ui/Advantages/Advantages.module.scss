@@ -1,0 +1,90 @@
+.advantages {
+    padding-top: 70px;
+    padding-bottom: 70px;
+    position: relative;
+  }
+
+  .background {
+    position: absolute  ;
+    left: 0;
+    top: 0;
+    z-index: -2;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+  }
+  .line {
+    position: absolute;
+    height: 100%; 
+    max-width: 73%;
+    margin-right: 50px;
+    object-fit: cover;
+  }
+  .title{
+    text-align: center;
+    font-size: 32px;
+    font-weight: 500;
+    margin-bottom: 50px;
+  }
+  .list {
+    width: 100%;
+    max-height: 290px;
+  }
+  .topList {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 50px;
+  }
+  .bottomList {
+    display: flex;
+    justify-content: center;
+    gap: 130px;
+  }
+  
+  @media (max-width: 860px) {
+    .advantages {
+      padding-top: 50px;
+      padding-bottom: 50px;
+      .line {
+        margin-right: 25px;
+        max-width: 94%;
+      }
+      .title {
+        font-size: 22px;
+        margin-bottom: 30px;
+      }
+      .topList {
+        justify-content: center;
+        gap: 10px;
+        margin-bottom: 30px;
+      }
+      .bottomList {
+        gap: 30px;
+        }
+    }
+  }
+  @media (max-width: 640px) {
+    .advantages {
+      padding-top: 30px;
+      padding-bottom: 30px;
+      height: 433px;
+      .title {
+        font-size: 18px;
+        margin-bottom: 20px;
+      }
+      .list {
+        display: flex;
+        flex-direction: column;
+      }
+      .topList {
+        flex-direction: column;
+        gap: 15px;
+        margin-bottom: 15px;
+      }
+      .bottomList {
+        flex-direction: column;
+        gap: 15px;
+      }
+    }
+  }

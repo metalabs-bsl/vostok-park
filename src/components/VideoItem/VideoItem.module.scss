@@ -1,0 +1,130 @@
+.preview {
+  position: relative;
+  width: 550px;
+  height: 304px;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-top: 10px;
+  margin-left: 30px;
+}
+
+.active {
+  width: 570px;
+  height: 324px;
+  margin-top: 0;
+  position: relative;
+  left: -10px;
+}
+
+.video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.previewContainer {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.playIcon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 66px;
+  height: 46px;
+  z-index: 100;
+}
+
+.image {
+  border-radius: 10px;
+  height: 100%;
+  width: 100%;
+}
+
+.inActive {
+  height: 100%;
+  width: 100%;
+  background-color: #4d4d4d;
+  opacity: 50%;
+  z-index: 1000;
+  position: absolute;
+  top: 0;
+  border-radius: 10px;
+}
+
+@media (max-width: 1800px) {
+ .preview {
+	margin-left: 10px;
+ }
+}
+
+@media (max-width: 1700px) {
+ .preview {
+	margin-left: 10px;
+ }
+}
+
+@media (max-width: 834px) {
+  .preview {
+    width: 378px;
+    height: 208px;
+    border-radius: 7.58px;
+    margin-top: 10px;
+	margin-left: 10px;
+  }
+
+  .active {
+    width: 400px;
+    height: 228px;
+    margin-top: 0;
+	left: -10px;
+  }
+
+  .playIcon {
+    width: 50px;
+    height: 36px;
+  }
+}
+
+@media (max-width: 500px) {
+  .active {
+    left: -12px;
+  }
+
+  .preview {
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 430px) {
+  .preview {
+	width: 306px;
+    height: 182px;
+    // width: 276px;
+    // height: 152px;
+    border-radius: 5px;
+    left: 0px;
+    margin-left: 0px;
+	margin-top: 5px;
+  }
+
+  .active {
+	width: 314px;
+    height: 192px;
+    // width: 284px;
+    // height: 162px;
+	left: -4px;
+	margin-top: 0;
+  }
+
+  .playIcon {
+    width: 36px;
+    height: 26px;
+  }
+}

@@ -1,0 +1,117 @@
+.questionsSection {
+  padding: 70px auto 20px;
+  background: var(--light-main);
+  border-radius: 15px;
+  padding: 30px 150px;
+}
+.questionsSectionTitle {
+  text-align: center;
+  font-size: 32px;
+  font-weight: 500;
+  color: var(--accent-dark);
+  margin-bottom: 30px;
+}
+.questionsList {
+  margin-bottom: 50px;
+}
+
+.questionsAsk {
+  .reqText {
+    font-family: var(--accent-dark);
+    font-weight: 400;
+    font-size: 22px;
+    text-align: center;
+    color: var(--accent-dark);
+    margin-bottom: 30px;
+  }
+
+  .sendBtn {
+    width: 100%;
+    height: 54px;
+    border-radius: 10px;
+    padding: 12px 0;
+    font-size: 22px;
+    font-weight: 400;
+    background: var(--accent-dark);
+    color: var(--light-background);
+    cursor: pointer;
+    margin: 0 auto;
+    // transition: background-color 0.5s ease, color 0.5s ease; 
+  }
+
+  .sendBtn:hover {
+    background-color: var(--light-background);
+    color: var(--accent-dark);
+  }
+  .sendBtn:active {
+    background-color: var(--light-background);
+    color: var(--accent-dark);
+    // transition: transform 0.5s ease;
+  }
+}
+
+
+@media (max-width: 926px) {
+  .questionsSection {
+    padding: 50px auto 10px;
+    border-radius: 10px;
+    padding: 20px 115px;
+  }
+  .questionsSectionTitle {
+    font-size: 22px;
+    margin-bottom: 15px;
+  }
+  .questionsList {
+    margin-bottom: 30px;
+  }  
+  .questionsAsk {
+    .reqText {
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+    .sendBtn {
+      height: 45px;
+      border-radius: 8px;
+      padding: 10px 0;
+      font-size: 18px;
+    }
+  }
+}
+
+@media (max-width: 700px) {
+  .questionsSection {
+    padding: 20px 50px;
+  }
+}
+
+@media (max-width: 500px) {
+  .questionsSection {
+    padding: 30px auto 5px;
+    border-radius: 6px;
+    padding: 20px 6px;
+  }
+
+  .questionsSectionTitle {
+    font-size: 18px;
+    margin-bottom: 25px;
+  }
+
+  .questionsList {
+    margin-bottom: 20px;
+  }
+
+  .questionsAsk {
+    .reqText {
+      font-size: 16px;
+      margin-bottom: 20px;
+    }
+
+    .sendBtn {
+      height: 38px;
+      border-radius: 6px;
+      padding: 8px;
+      font-size: 16px;
+    }
+  }
+}
+

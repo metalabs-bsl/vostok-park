@@ -1,0 +1,24 @@
+<svg width="26" height="18" viewBox="0 0 26 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="RU - Russian Federation">
+<g clipPath="url(#clip0_17528_1873)">
+<rect width="26" height="18" rx="3" fill="white"/>
+<g id="flag">
+<g id="contents">
+<path id="background" fillRule="evenodd" clipRule="evenodd" d="M-3 -3V21H29V-3H-3Z" fill="#3D58DB"/>
+<mask id="mask0_17528_1873" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="-3" y="-3" width="32" height="24">
+<path id="background_2" fillRule="evenodd" clipRule="evenodd" d="M-3 -3V21H29V-3H-3Z" fill="white"/>
+</mask>
+<g mask="url(#mask0_17528_1873)">
+<path id="top" fillRule="evenodd" clipRule="evenodd" d="M-3 -3V5H29V-3H-3Z" fill="#F7FCFF"/>
+<path id="bottom" fillRule="evenodd" clipRule="evenodd" d="M-3 13V21H29V13H-3Z" fill="#C51918"/>
+</g>
+</g>
+</g>
+</g>
+</g>
+<defs>
+<clipPath id="clip0_17528_1873">
+<rect width="26" height="18" rx="3" fill="white"/>
+</clipPath>
+</defs>
+</svg>
