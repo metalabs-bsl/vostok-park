@@ -28,20 +28,22 @@ export const StartWork = () => {
   const t = useTranslations();
 
   return (
-    <section className={`${styles.StartWork} container`}>
-      <div className={styles.background}>
-        <Image src={line2} alt="line2" className={styles.line} />
-      </div>
-      <h2 className={styles.title}>{t("startWorkTitle")}</h2>
-      <div className={styles.cards}>
-        {CardBox.map((card, index) => (
-          <StartCard
-            key={index}
-            imageLink={card.imageLink}
-            descriptionKey={card.descriptionKey}
-            t={t}
-          />
-        ))}
+    <section className={styles.StartWork}>
+      <div className="container">
+        <div className={styles.background}>
+          <Image src={line2} alt="line2" className={styles.line} />
+        </div>
+        <h2 className={styles.title}>{t("startWorkTitle")}</h2>
+        <div className={styles.cards}>
+          {CardBox.map((card, index) => (
+            <StartCard
+              key={index}
+              imageLink={card.imageLink}
+              descriptionKey={card.descriptionKey}
+              t={t}
+            />
+          ))}
+        </div>
       </div>
     </section>
   );

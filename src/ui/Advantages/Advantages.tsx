@@ -19,7 +19,7 @@ export const Advantages: FC = () => {
   const [advantages, setAdvantages] = useState<Advantage[]>([]);
 
   useEffect(() => {
-    const translatedData = listData.map(item => ({
+    const translatedData = listData.map((item) => ({
       title: t(item.title),
       description: t(item.description),
       imageLink: item.imageLink,
@@ -37,39 +37,41 @@ export const Advantages: FC = () => {
   }, []);
 
   return (
-    <section id="advantages" className={`${styles.advantages} container`}>
-      <div className={styles.background}>
-        <Image src={background1} alt="fon1" className={styles.line} />
-      </div>
-      <h2 className={styles.title}>{t("advantagesTitle")}</h2>
-      <div className={styles.list}>
-        {isMobile ? (
-          <>
-            <div className={styles.topList}>
-              {advantages.slice(0, 2).map((box, index) => (
-                <Boxes key={index} {...box} />
-              ))}
-            </div>
-            <div className={styles.bottomList}>
-              {advantages.slice(2).map((box, index) => (
-                <Boxes key={index + 2} {...box} />
-              ))}
-            </div>
-          </>
-        ) : (
-          <>
-            <div className={styles.topList}>
-              {advantages.slice(0, 3).map((box, index) => (
-                <Boxes key={index} {...box} />
-              ))}
-            </div>
-            <div className={styles.bottomList}>
-              {advantages.slice(3).map((box, index) => (
-                <Boxes key={index + 3} {...box} />
-              ))}
-            </div>
-          </>
-        )}
+    <section id="advantages" className={styles.advantages}>
+      <div className="container">
+        <div className={styles.background}>
+          <Image src={background1} alt="fon1" className={styles.line} />
+        </div>
+        <h2 className={styles.title}>{t("advantagesTitle")}</h2>
+        <div className={styles.list}>
+          {isMobile ? (
+            <>
+              <div className={styles.topList}>
+                {advantages.slice(0, 2).map((box, index) => (
+                  <Boxes key={index} {...box} />
+                ))}
+              </div>
+              <div className={styles.bottomList}>
+                {advantages.slice(2).map((box, index) => (
+                  <Boxes key={index + 2} {...box} />
+                ))}
+              </div>
+            </>
+          ) : (
+            <>
+              <div className={styles.topList}>
+                {advantages.slice(0, 3).map((box, index) => (
+                  <Boxes key={index} {...box} />
+                ))}
+              </div>
+              <div className={styles.bottomList}>
+                {advantages.slice(3).map((box, index) => (
+                  <Boxes key={index + 3} {...box} />
+                ))}
+              </div>
+            </>
+          )}
+        </div>
       </div>
     </section>
   );

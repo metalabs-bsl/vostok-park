@@ -1,211 +1,215 @@
+.hero {
+  padding: 10px;
+}
+
 .container {
-    display: flex;
-    justify-content: left;
-    align-items: center;
-    width: 100%;
-    height: calc(100vh - 150px);
-    padding: 20px 0;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  width: 100%;
+  height: calc(100vh - 150px);
+  padding: 20px 0;
 }
 
 .background {
-    position: relative;
-    width: 100%;
-    border-radius: 15px;
-    overflow: hidden;
+  position: relative;
+  width: 100%;
+  border-radius: 15px;
+  overflow: hidden;
 }
 
 .background::before {
-    content: "";
-    position: absolute;
-    height: 100%;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(141deg, #ffd43c 0%, #ffc806 44.58%, #f4af2f 100%);
-    z-index: -10;
+  content: "";
+  position: absolute;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(141deg, #ffd43c 0%, #ffc806 44.58%, #f4af2f 100%);
+  z-index: -10;
 }
 
 .background::after {
-    content: "";
-    position: absolute; 
-    width: 100%;
-    height: 75%;
-    top: 14%;
-    left: 10%;
-    right: 0;
-    bottom: 0;
-    background: url(../../../public/images/hero.webp) center/contain no-repeat;
-    background-position: 100%;
-    z-index: -9;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 75%;
+  top: 14%;
+  left: 10%;
+  right: 0;
+  bottom: 0;
+  background: url(../../../public/images/hero.webp) center/contain no-repeat;
+  background-position: 100%;
+  z-index: -9;
 }
 
 .success {
-    position: fixed;
-    right: 30px;
-    bottom: 25px;
-    padding: 25px;
-    border-radius: 15px;
-    columns: var(--light-background);
-    background-color: var(--light-main);
-    margin-top: 10px;
-    transform: translateX(200%);
-    opacity: 0;
-    height: 0;
-    transition: all .3s;
-    z-index: 9999;
+  position: fixed;
+  right: 30px;
+  bottom: 25px;
+  padding: 25px;
+  border-radius: 15px;
+  columns: var(--light-background);
+  background-color: var(--light-main);
+  margin-top: 10px;
+  transform: translateX(200%);
+  opacity: 0;
+  height: 0;
+  transition: all 0.3s;
+  z-index: 9999;
 
-    &.active {
-      opacity: 1;
-      height: auto;
-      transform: translateX(0);
-    }
-
-    &_text {
-      font-size: 16px;
-      max-width: 400px;
-      color: var(--accent-dark);
-    }
+  &.active {
+    opacity: 1;
+    height: auto;
+    transform: translateX(0);
   }
 
-@media ( max-width: 1375px) {
-    .container {
-        padding: 20px 6px;
-    }
+  &_text {
+    font-size: 16px;
+    max-width: 400px;
+    color: var(--accent-dark);
+  }
+}
+
+@media (max-width: 1375px) {
+  .container {
+    padding: 20px 6px;
+  }
 }
 
 @media (max-width: 1095px) {
-    .background {
-        border-radius: 10px;
-    }
+  .background {
+    border-radius: 10px;
+  }
 
-    .background::after {
-        width: 100%;
-        height: 40%;
-        top: 29%;
-        left: 7%;
-    }
+  .background::after {
+    width: 100%;
+    height: 40%;
+    top: 29%;
+    left: 7%;
+  }
 }
 
 @media (max-width: 1024px) {
-    .container {
-        height: 64vh;
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        align-items: center;
-    }
-    .background::after {
-        width: 100%;
-        height: 100%;
-        top: 29%;
-        left: 0;
-    }
+  .container {
+    height: 64vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  .background::after {
+    width: 100%;
+    height: 100%;
+    top: 29%;
+    left: 0;
+  }
 }
 
 @media (max-width: 835px) {
-    .container {
-        height: 100vh;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        width: 100%;
-    }
+  .container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
 
-    .background::after {
-        width: 100%;
-        height: 100%;
-        top: 33%;
-    }
+  .background::after {
+    width: 100%;
+    height: 100%;
+    top: 33%;
+  }
 }
 
 @media (max-width: 820px) {
-    .container {
-        height: 75vh;
-    }
+  .container {
+    height: 75vh;
+  }
 
-    .background::after {
-        top: 27%;
-    }
+  .background::after {
+    top: 27%;
+  }
 }
 
-
 @media (max-width: 768px) {
-    .container {
-        height: 80vh;
-    }
+  .container {
+    height: 80vh;
+  }
 
-    .background::after {
-        top: 30%;
-    }
-
+  .background::after {
+    top: 30%;
+  }
 }
 
 @media (max-width: 570px) {
-    .container {
-        height: 115vh;
-    }
-    .background::after {
-        width: 100%;
-        background-size: contain;
-        height: 60%;
-        top: 55%;
-        left: 0;
-    }
+  .hero {
+    padding: 0;
+  }
+  .container {
+    height: 814px;
+  }
+  .background::after {
+    width: 100%;
+    background-size: contain;
+    height: 60%;
+    top: 55%;
+    left: 0;
+  }
 }
 
 @media (max-width: 448px) {
-    .container {
-        height: 716px;
-        flex-direction: column;
-        align-items: center;
-    }
-    .background::after {
-        width: 133%;
-        top: 52%;
-        left: -15%;
-    }
+  .container {
+    height: 716px;
+    flex-direction: column;
+    align-items: center;
+  }
+  .background::after {
+    width: 133%;
+    top: 52%;
+    left: -15%;
+  }
 }
 
 @media (max-width: 431px) {
-    .container {
-        padding: 10px 6px;
-    }
+  .container {
+    padding: 10px 6px;
+  }
 }
 @media (max-width: 414px) {
-    .container {
-        height: 80vh;
-        padding: 5px;
-    }
-    .background::after {
-        width: 133%;
-        top: 50%;
-        left: -15%;
-    }
+  .container {
+    height: 80vh;
+    padding: 5px;
+  }
+  .background::after {
+    width: 133%;
+    top: 50%;
+    left: -15%;
+  }
 }
 @media (max-width: 390px) {
-    .container {
-        height: 86vh;
-    }
+  .container {
+    height: 710px;
+  }
 }
 
 @media (max-width: 375px) {
-    .container {
-        height: 98vh;
-        padding: 5px;
-    }
-    .background::after {
-        width: 133%;
-        top: 55%;
-        left: -15%;
-    }
+  .container {
+    padding: 5px;
+  }
+  .background::after {
+    width: 133%;
+    top: 55%;
+    left: -15%;
+  }
 }
 
 @media (max-width: 320px) {
-    .container {
-        height: 117vh;
-    }
-    .background::after {
-        top: 58.5%;
-    }
+  .container {
+    height: 700px;
+  }
+  .background::after {
+    top: 58.5%;
+  }
 }

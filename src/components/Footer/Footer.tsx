@@ -321,7 +321,7 @@ export const Footer = () => {
       <div className={styles.bottom}>
         <p className={styles.desc}>{t("footer_desc_apple")}</p>
         <p className={styles.desc}>{t("footer_desc_google")}</p>
-        <p className={`${styles.desc} ${styles.mt_30}`}>©2024 Восток Парк Тест</p>
+        <p className={`${styles.desc} ${styles.mt_30}`}>©2024 Восток Парк</p>
       </div>
     </footer>
   );
