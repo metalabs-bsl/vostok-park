@@ -3,7 +3,7 @@
   flex-direction: column;
   align-items: center;
   border-radius: 15px;
-  background-color: #F3F0E7;
+  background-color: #f3f0e7;
   text-align: center;
   padding: 30px 40px;
 }
@@ -50,7 +50,7 @@
 
 .thumbSlide {
   margin: 0 auto;
-  color: #1E1E1E;
+  color: #1e1e1e;
   width: min-content;
   text-align: center;
   font-size: 22px;
@@ -63,25 +63,25 @@
 }
 
 /* Глобальный селектор */
-:global(.swiper-slide-thumb-active) .thumbSlide>p {
+:global(.swiper-slide-thumb-active) .thumbSlide > p {
   position: relative;
   width: min-content;
 }
 
-:global(.swiper-slide-thumb-active) .thumbSlide>p::after {
-  content: '';
+:global(.swiper-slide-thumb-active) .thumbSlide > p::after {
+  content: "";
   position: absolute;
   top: 32px;
   left: 0;
   width: 100%;
   height: 3px;
-  background: #FFC806;
+  background: #ffc806;
 }
 
 .tariffs {
   :global {
     .swiper-button-prev {
-      background-image: url('./images/Icon-left.svg');
+      background-image: url("./images/Icon-left.svg");
       background-size: contain;
       background-repeat: no-repeat;
       width: 56px;
@@ -90,7 +90,7 @@
     }
 
     .swiper-button-next {
-      background-image: url('./images/Icon-right.svg');
+      background-image: url("./images/Icon-right.svg");
       background-size: contain;
       background-repeat: no-repeat;
       width: 56px;
@@ -124,12 +124,12 @@
 }
 
 .btnSub:hover {
-  background: #FFF;
+  background: #fff;
   color: rgb(0, 0, 0);
   transition: 0.6s;
 }
 
-@media (max-width:970px) {
+@media (max-width: 970px) {
   .tariffsContainer {
     padding: 20px 17px;
     border-radius: 10px;
@@ -158,25 +158,25 @@
     padding: 0px;
     margin-bottom: 20px;
   }
-  
-  :global(.swiper-slide-thumb-active) .thumbSlide>p::after {
+
+  :global(.swiper-slide-thumb-active) .thumbSlide > p::after {
     top: 23px;
   }
-  
-  .tariffsContainer {
+
+  .tariffs {
     // Ваши стили для контейнера
-  
+
     :global {
       .swiper-button-prev {
         width: 42px;
         height: 42px;
       }
-  
+
       .swiper-button-next {
         width: 42px;
         height: 42px;
       }
-  
+
       .swiper.thumbSwiper {
         max-width: 646px;
       }
@@ -188,10 +188,9 @@
     padding: 10px 0px;
     font-size: 18px;
   }
+}
 
-} 
-
-@media (max-width:690px) {
+@media (max-width: 690px) {
   .tariffsContainer {
     padding: 20px 6px;
     border-radius: 6px;
@@ -219,23 +218,23 @@
     font-size: 16px;
     margin-bottom: 10px;
   }
-  
-  :global(.swiper-slide-thumb-active) .thumbSlide>p::after {
+
+  :global(.swiper-slide-thumb-active) .thumbSlide > p::after {
     top: 21px;
   }
-  
-  .tariffsContainer {
+
+  .tariffs {
     :global {
       .swiper-button-prev {
         width: 32px;
         height: 32px;
       }
-  
+
       .swiper-button-next {
         width: 32px;
         height: 32px;
       }
-  
+
       .swiper.thumbSwiper {
         max-width: 268px;
       }
@@ -247,5 +246,21 @@
     padding: 8px 0px;
     font-size: 16px;
   }
-
-} 
+}
+@media (max-width: 484px) {
+  .wrapper {
+    padding: 30px 20px;
+  }
+}
+@media (max-width: 445px) {
+  .wrapper {
+    padding: 30px 10px;
+  }
+}
+@media (max-width: 412px) {
+  .tariffSlide {
+    img {
+      width: 260px;
+    }
+  }
+}

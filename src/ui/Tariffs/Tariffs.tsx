@@ -21,6 +21,7 @@ export const Tariffs: FC = () => {
       <div className="container">
         <div className={styles.wrapper}>
           <h2 className={styles.sectionTittle}>{t("tariffs_title")}</h2>
+
           <div className={styles.blockSwiper}>
             <Swiper
               thumbs={{ swiper: thumbsSwiper }}
