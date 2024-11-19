@@ -1,7 +1,7 @@
 import { type FC, useEffect, useState } from "react";
 import Image from "next/image";
 import styles from "./VideoPlayer.module.scss";
-import youtubeIcon from '../../../../../public/images/youtubeIcon.webp'
+import youtubeIcon from "../../../../../public/images/youtubeIcon.webp";
 
 interface VideoItemProps {
   videoId: string;
@@ -10,19 +10,24 @@ interface VideoItemProps {
   onPlay: () => void;
 }
 
-export const VideoPlayer: FC<VideoItemProps> = ({ videoId, imageLink, isActive, onPlay }) => {
+export const VideoPlayer: FC<VideoItemProps> = ({
+  videoId,
+  imageLink,
+  isActive,
+  onPlay,
+}) => {
   const [isPlaying, setIsPlaying] = useState(false);
   const videoLink = `https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&controls=1`;
 
   useEffect(() => {
     if (!isActive) {
-      setIsPlaying(false)
+      setIsPlaying(false);
     }
-  },[isActive])
+  }, [isActive]);
 
   const handlePlay = () => {
     setIsPlaying(true);
-    onPlay()
+    onPlay();
   };
 
   return (
@@ -37,9 +42,9 @@ export const VideoPlayer: FC<VideoItemProps> = ({ videoId, imageLink, isActive, 
           />
           <div className={styles.playButton}>
             <Image
-            className={styles.playIcon}
-            src={youtubeIcon}
-            alt="playicon"
+              className={styles.playIcon}
+              src={youtubeIcon}
+              alt="playicon"
             />
           </div>
         </div>

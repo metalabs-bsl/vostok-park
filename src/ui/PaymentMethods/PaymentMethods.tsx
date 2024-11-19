@@ -62,6 +62,7 @@ export const PaymentMethods = () => {
 
         <div className={styles.videoWrapper}>
           <Swiper
+            cssMode={true}
             spaceBetween={20}
             slidesPerView={2.5}
             centeredSlides={true}

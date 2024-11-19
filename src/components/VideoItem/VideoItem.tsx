@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-img-element */
 import { type FC, useEffect, useState } from "react";
 import styles from "./VideoItem.module.scss";
 
@@ -8,7 +7,11 @@ interface VideoItemProps {
   isActive: boolean;
 }
 
-export const VideoItem: FC<VideoItemProps> = ({ videoId, imageLink, isActive }) => {
+export const VideoItem: FC<VideoItemProps> = ({
+  videoId,
+  imageLink,
+  isActive,
+}) => {
   const [isPlaying, setIsPlaying] = useState(false);
   const videoLink = `https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&controls=1`;
 
@@ -26,12 +29,8 @@ export const VideoItem: FC<VideoItemProps> = ({ videoId, imageLink, isActive }) 
     <div className={`${styles.preview} ${isActive ? styles.active : ""}`}>
       {!isPlaying ? (
         <div className={styles.previewContainer}>
-		{!isActive && <div className={styles.inActive}></div>}
-          <img
-            src={imageLink}
-            alt="video preview"
-            className={styles.image}
-          />
+          {!isActive && <div className={styles.inActive}></div>}
+          <img src={imageLink} alt="video preview" className={styles.image} />
           <div className={styles.playButton} onClick={handlePlay}>
             <svg
               className={styles.playIcon}
