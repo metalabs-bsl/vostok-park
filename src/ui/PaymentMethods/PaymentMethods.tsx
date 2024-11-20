@@ -264,6 +264,7 @@ export const PaymentMethods = () => {
                 className={styles.swiperSlider}
                 onClick={() => swiperRef?.slideToLoop(index)}
               >
+                <div className={styles.bg}></div>
                 <VideoItem
                   videoId={video.videoId}
                   imageLink={video.imageLink}

@@ -64,6 +64,31 @@
   }
 }
 
+.bg {
+  &::before {
+    position: absolute;
+    content: "";
+    width: 40%;
+    height: 20%;
+    background: #0000;
+    top: 50%;
+    left: 0;
+    transform: translateY(-30%);
+    z-index: 9;
+  }
+  &::after {
+    position: absolute;
+    content: "";
+    width: 40%;
+    height: 20%;
+    background: #0000;
+    top: 50%;
+    right: 0;
+    transform: translateY(-30%);
+    z-index: 9;
+  }
+}
+
 @media (max-width: 834px) {
   .videosContainer {
     top: 20px;

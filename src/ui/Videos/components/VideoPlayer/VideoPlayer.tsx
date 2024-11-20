@@ -25,13 +25,21 @@ export const VideoPlayer: FC<VideoItemProps> = ({
     }
   }, [isActive]);
 
-  const handlePlay = () => {
+  const handlePlay = (event: React.MouseEvent) => {
+    event.stopPropagation(); // Останавливаем всплытие событий
     setIsPlaying(true);
     onPlay();
   };
 
+  const handleIframeClick = (event: React.MouseEvent) => {
+    event.stopPropagation(); // Останавливаем всплытие при клике на iframe
+  };
+
   return (
-    <div className={styles.preview}>
+    <div
+      className={styles.preview}
+      onClick={(event) => event.stopPropagation()}
+    >
       {!isPlaying ? (
         <div className={styles.previewContainer} onClick={handlePlay}>
           <Image
@@ -54,6 +62,9 @@ export const VideoPlayer: FC<VideoItemProps> = ({
           src={videoLink}
           frameBorder="0"
           allowFullScreen
+          allow="autoplay;"
+          autoFocus
+          onClick={handleIframeClick} // Останавливаем всплытие событий при клике на iframe
         ></iframe>
       )}
     </div>

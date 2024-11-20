@@ -33,6 +33,7 @@ export const Videos: FC = () => {
 
   const [activeVideo, setActiveVideo] = useState<string | null>(null);
   const [activeIndex, setActiveIndex] = useState(0);
+
   const swiperRef = useRef<SwiperType | null>(null);
 
   return (
@@ -43,11 +44,11 @@ export const Videos: FC = () => {
         slidesPerView={2.2}
         spaceBetween={25}
         onSlideChange={(swiper) => {
-          setActiveIndex(swiper.realIndex); // Обновляем индекс активного слайда
-          setActiveVideo(null); // Сбрасываем состояние активного видео
+          setActiveIndex(swiper.realIndex);
+          setActiveVideo(null);
         }}
         onSwiper={(swiper) => (swiperRef.current = swiper)}
-        loop={true}
+        loop
         modules={[Pagination, Navigation]}
         allowTouchMove={true}
         breakpoints={{
@@ -72,6 +73,7 @@ export const Videos: FC = () => {
       >
         {videoBox.map((video, index) => (
           <SwiperSlide key={index} className={styles.swiperSlide}>
+            <div className={styles.bg}></div>
             <VideoPlayer
               key={video.videoId}
               videoId={video.videoId}
@@ -82,7 +84,6 @@ export const Videos: FC = () => {
           </SwiperSlide>
         ))}
       </Swiper>
-
       <div className={`${styles.customPagination}`}>
         {videoBox.map((_, index) => (
           <div
