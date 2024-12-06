@@ -73,7 +73,13 @@ export const Videos: FC = () => {
       >
         {videoBox.map((video, index) => (
           <SwiperSlide key={index} className={styles.swiperSlide}>
-            <div className={styles.bg}></div>
+            <div
+              className={
+                activeIndex === index
+                  ? styles.bg // Стиль для активного
+                  : styles.bgInactive // Стиль для неактивного
+              }
+            ></div>
             <VideoPlayer
               key={video.videoId}
               videoId={video.videoId}
