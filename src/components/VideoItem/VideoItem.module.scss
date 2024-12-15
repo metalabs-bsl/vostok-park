@@ -18,10 +18,12 @@
 
 .video {
   position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
   height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  top: 0;
+  left: 0;
   border: 0;
 }
 
@@ -59,15 +61,15 @@
 }
 
 @media (max-width: 1800px) {
- .preview {
-	margin-left: 10px;
- }
+  .preview {
+    margin-left: 10px;
+  }
 }
 
 @media (max-width: 1700px) {
- .preview {
-	margin-left: 10px;
- }
+  .preview {
+    margin-left: 10px;
+  }
 }
 
 @media (max-width: 834px) {
@@ -76,14 +78,14 @@
     height: 208px;
     border-radius: 7.58px;
     margin-top: 10px;
-	margin-left: 10px;
+    margin-left: 10px;
   }
 
   .active {
     width: 400px;
     height: 228px;
     margin-top: 0;
-	left: -10px;
+    left: -10px;
   }
 
   .playIcon {
@@ -104,23 +106,23 @@
 
 @media (max-width: 430px) {
   .preview {
-	width: 306px;
+    width: 306px;
     height: 182px;
     // width: 276px;
     // height: 152px;
     border-radius: 5px;
     left: 0px;
     margin-left: 0px;
-	margin-top: 5px;
+    margin-top: 5px;
   }
 
   .active {
-	width: 314px;
+    width: 314px;
     height: 192px;
     // width: 284px;
     // height: 162px;
-	left: -4px;
-	margin-top: 0;
+    left: -4px;
+    margin-top: 0;
   }
 
   .playIcon {

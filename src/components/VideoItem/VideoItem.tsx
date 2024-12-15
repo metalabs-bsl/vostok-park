@@ -53,11 +53,11 @@ export const VideoItem: FC<VideoItemProps> = ({
         <iframe
           className={styles.video}
           src={videoLink}
-          width="550"
-          height="304"
           frameBorder="0"
+          allow="autoplay; fullscreen; encrypted-media"
           allowFullScreen
-        ></iframe>
+          id={`video-${videoId}`}
+        />
       )}
     </div>
   );

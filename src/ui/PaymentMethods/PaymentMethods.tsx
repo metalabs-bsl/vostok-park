@@ -1,6 +1,5 @@
 "use client";
 import { useState } from "react";
-import styles from "./PaymentMethods.module.scss";
 import { VideoItem } from "@/components/VideoItem/VideoItem";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
@@ -9,7 +8,7 @@ import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
 import { Swiper as SwiperType } from "swiper";
 import { useTranslations } from "next-intl";
-
+import styles from "./PaymentMethods.module.scss";
 export const PaymentMethods = () => {
   const videos = [
     {
@@ -62,18 +61,24 @@ export const PaymentMethods = () => {
 
         <div className={styles.videoWrapper}>
           <Swiper
-            cssMode={true}
+            cssMode={false}
             spaceBetween={20}
+            simulateTouch={false}
             slidesPerView={2.5}
             centeredSlides={true}
+            touchRatio={0}
             pagination={{
               clickable: true,
             }}
             loop={true}
             modules={[Navigation]}
             className={styles.videosContainer}
-            allowTouchMove={true}
+            allowTouchMove={false}
             onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
+            navigation={{
+              nextEl: ".swiper-button-next",
+              prevEl: ".swiper-button-prev",
+            }}
             onSwiper={(swiper) => setSwiperRef(swiper)}
             breakpoints={{
               350: {
@@ -264,7 +269,6 @@ export const PaymentMethods = () => {
                 className={styles.swiperSlider}
                 onClick={() => swiperRef?.slideToLoop(index)}
               >
-                <div className={styles.bg}></div>
                 <VideoItem
                   videoId={video.videoId}
                   imageLink={video.imageLink}
@@ -287,6 +291,12 @@ export const PaymentMethods = () => {
                 />
               ))}
             </div>
+            <div
+              className={`${styles.swiperButtonNext} swiper-button-next`}
+            ></div>
+            <div
+              className={`${styles.swiperButtonPrev} swiper-button-prev`}
+            ></div>
           </Swiper>
         </div>
         <div className={styles.videoBorder}></div>

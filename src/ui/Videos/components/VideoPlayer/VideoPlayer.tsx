@@ -60,11 +60,9 @@ export const VideoPlayer: FC<VideoItemProps> = ({
         <iframe
           className={styles.video}
           src={videoLink}
-          frameBorder="0"
           allowFullScreen
-          allow="autoplay;"
-          autoFocus
-          onClick={handleIframeClick} // Останавливаем всплытие событий при клике на iframe
+          allow="autoplay; fullscreen; orientation-lock"
+          onClick={handleIframeClick}
         ></iframe>
       )}
     </div>

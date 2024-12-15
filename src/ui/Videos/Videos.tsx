@@ -1,6 +1,5 @@
 "use client";
 import { type FC, useRef, useState } from "react";
-import styles from "./Videos.module.scss";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper/modules";
 import "swiper/css";
@@ -8,6 +7,7 @@ import "swiper/css/pagination";
 import { VideoPlayer } from "./components/VideoPlayer";
 import { Swiper as SwiperType } from "swiper";
 import { useTranslations } from "next-intl";
+import styles from "./Videos.module.scss";
 
 const videoBox = [
   {
@@ -40,17 +40,24 @@ export const Videos: FC = () => {
     <section className={styles.videosSection}>
       <p className={styles.title}>{t("videosTitle")}</p>
       <Swiper
-        cssMode={true}
+        cssMode={false}
         slidesPerView={2.2}
+        simulateTouch={false}
         spaceBetween={25}
+        centeredSlides={true}
+        touchRatio={0}
         onSlideChange={(swiper) => {
           setActiveIndex(swiper.realIndex);
           setActiveVideo(null);
         }}
         onSwiper={(swiper) => (swiperRef.current = swiper)}
-        loop
-        modules={[Pagination, Navigation]}
-        allowTouchMove={true}
+        loop={true}
+        modules={[Navigation]}
+        allowTouchMove={false}
+        navigation={{
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        }}
         breakpoints={{
           320: {
             slidesPerView: 1.1,
@@ -72,23 +79,34 @@ export const Videos: FC = () => {
         className={styles.SwiperBox}
       >
         {videoBox.map((video, index) => (
-          <SwiperSlide key={index} className={styles.swiperSlide}>
-            <div
-              className={
-                activeIndex === index
-                  ? styles.bg // Стиль для активного
-                  : styles.bgInactive // Стиль для неактивного
+          <SwiperSlide
+            key={index}
+            className={`${styles.swiperSlide} ${
+              activeIndex === index ? styles.activeSlide : ""
+            }`}
+            onClick={() => {
+              if (activeIndex !== index) {
+                swiperRef.current?.slideToLoop(index);
+              } else {
+                setActiveVideo(video.videoId);
               }
-            ></div>
+            }}
+          >
             <VideoPlayer
               key={video.videoId}
               videoId={video.videoId}
               imageLink={video.imageLink}
               isActive={activeVideo === video.videoId}
-              onPlay={() => setActiveVideo(video.videoId)}
+              onPlay={() => {
+                if (activeIndex === index) {
+                  setActiveVideo(video.videoId);
+                }
+              }}
             />
           </SwiperSlide>
         ))}
+        <div className={`${styles.swiperButtonNext} swiper-button-next`}></div>
+        <div className={`${styles.swiperButtonPrev} swiper-button-prev`}></div>
       </Swiper>
       <div className={`${styles.customPagination}`}>
         {videoBox.map((_, index) => (

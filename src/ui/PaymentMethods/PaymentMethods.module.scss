@@ -64,28 +64,34 @@
   }
 }
 
-.bg {
-  &::before {
-    position: absolute;
-    content: "";
-    width: 40%;
-    height: 20%;
-    background: #0000;
-    top: 50%;
-    left: 0;
-    transform: translateY(-30%);
-    z-index: 9;
-  }
-  &::after {
-    position: absolute;
-    content: "";
-    width: 40%;
-    height: 20%;
-    background: #0000;
-    top: 50%;
-    right: 0;
-    transform: translateY(-30%);
-    z-index: 9;
+.paymentMethods {
+  :global {
+    .swiper-button-prev {
+      background-image: url("./images/Icon-left.svg");
+      background-size: contain;
+      background-repeat: no-repeat;
+      width: 56px;
+      height: 56px;
+      left: 0px;
+    }
+
+    .swiper-button-next {
+      background-image: url("./images/Icon-right.svg");
+      background-size: contain;
+      background-repeat: no-repeat;
+      width: 56px;
+      height: 56px;
+      right: 0px;
+    }
+
+    .swiper-button-prev::after,
+    .swiper-button-next::after {
+      content: none;
+    }
+
+    .swiper.thumbSwiper {
+      max-width: 964px;
+    }
   }
 }
 
@@ -118,6 +124,25 @@
     font-size: 16px;
     margin-top: 5px;
   }
+  .paymentMethods {
+    // Ваши стили для контейнера
+
+    :global {
+      .swiper-button-prev {
+        width: 42px;
+        height: 42px;
+      }
+
+      .swiper-button-next {
+        width: 42px;
+        height: 42px;
+      }
+
+      .swiper.thumbSwiper {
+        max-width: 646px;
+      }
+    }
+  }
 }
 
 @media (max-width: 430px) {
@@ -144,5 +169,22 @@
   .description {
     font-size: 14px;
     max-width: 288px;
+  }
+  .paymentMethods {
+    :global {
+      .swiper-button-prev {
+        width: 42px;
+        height: 42px;
+      }
+
+      .swiper-button-next {
+        width: 42px;
+        height: 42px;
+      }
+
+      .swiper.thumbSwiper {
+        max-width: 268px;
+      }
+    }
   }
 }
