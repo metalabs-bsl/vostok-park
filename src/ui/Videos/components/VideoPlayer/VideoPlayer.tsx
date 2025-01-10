@@ -1,45 +1,39 @@
-import { type FC, useEffect, useState } from "react";
+import { type FC, MutableRefObject, useEffect, useState } from "react";
 import Image from "next/image";
 import styles from "./VideoPlayer.module.scss";
-import youtubeIcon from "../../../../../public/images/youtubeIcon.webp";
+import youtubeIcon from '../../../../../public/images/youtubeIcon.webp'
+import ReactPlayer from 'react-player';
+import { Swiper as SwiperType } from 'swiper';
+
 
 interface VideoItemProps {
   videoId: string;
   imageLink: string;
   isActive: boolean;
   onPlay: () => void;
+  swiperRef?: MutableRefObject<SwiperType | null>;
+  videoSrc: string
 }
 
-export const VideoPlayer: FC<VideoItemProps> = ({
-  videoId,
-  imageLink,
-  isActive,
-  onPlay,
-}) => {
+export const VideoPlayer: FC<VideoItemProps> = ({ imageLink, isActive, onPlay, swiperRef, videoSrc }) => {
   const [isPlaying, setIsPlaying] = useState(false);
-  const videoLink = `https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&controls=1`;
 
   useEffect(() => {
     if (!isActive) {
-      setIsPlaying(false);
+      setIsPlaying(false)
     }
-  }, [isActive]);
+    if (swiperRef?.current) {
+      swiperRef.current.allowTouchMove = !isPlaying;
+    }
+  }, [isPlaying, isActive, swiperRef]);
 
-  const handlePlay = (event: React.MouseEvent) => {
-    event.stopPropagation(); // Останавливаем всплытие событий
+  const handlePlay = () => {
     setIsPlaying(true);
-    onPlay();
-  };
-
-  const handleIframeClick = (event: React.MouseEvent) => {
-    event.stopPropagation(); // Останавливаем всплытие при клике на iframe
+    onPlay()
   };
 
   return (
-    <div
-      className={styles.preview}
-      onClick={(event) => event.stopPropagation()}
-    >
+    <div className={styles.preview}>
       {!isPlaying ? (
         <div className={styles.previewContainer} onClick={handlePlay}>
           <Image
@@ -50,20 +44,32 @@ export const VideoPlayer: FC<VideoItemProps> = ({
           />
           <div className={styles.playButton}>
             <Image
-              className={styles.playIcon}
-              src={youtubeIcon}
-              alt="playicon"
+            className={styles.playIcon}
+            src={youtubeIcon}
+            alt="playicon"
             />
           </div>
         </div>
       ) : (
-        <iframe
-          className={styles.video}
-          src={videoLink}
-          allowFullScreen
-          allow="autoplay; fullscreen; orientation-lock"
-          onClick={handleIframeClick}
-        ></iframe>
+        <div className={`${styles.reactPlayerContainer}`}
+        onTouchStart={(e) => e.stopPropagation()}
+        onTouchMove={(e) => e.stopPropagation()}
+        onTouchEnd={() => {
+          if (swiperRef?.current) {
+            swiperRef.current.allowTouchMove = true;
+          }
+        }}
+        >
+        <ReactPlayer
+        url={videoSrc}
+        playing={true}
+        controls={true}
+        width="100%"
+        height="100%"
+        className={styles.video}
+        playsinline={true}
+      />
+      </div>
       )}
     </div>
   );

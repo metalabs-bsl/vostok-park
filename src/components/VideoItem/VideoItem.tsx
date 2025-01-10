@@ -1,19 +1,15 @@
 import { type FC, useEffect, useState } from "react";
 import styles from "./VideoItem.module.scss";
+import ReactPlayer from "react-player";
 
 interface VideoItemProps {
-  videoId: string;
+  videoSrc: string;
   imageLink: string;
   isActive: boolean;
 }
 
-export const VideoItem: FC<VideoItemProps> = ({
-  videoId,
-  imageLink,
-  isActive,
-}) => {
+export const VideoItem: FC<VideoItemProps> = ({ videoSrc, imageLink, isActive }) => {
   const [isPlaying, setIsPlaying] = useState(false);
-  const videoLink = `https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&controls=1`;
 
   const handlePlay = () => {
     setIsPlaying(true);
@@ -29,8 +25,12 @@ export const VideoItem: FC<VideoItemProps> = ({
     <div className={`${styles.preview} ${isActive ? styles.active : ""}`}>
       {!isPlaying ? (
         <div className={styles.previewContainer}>
-          {!isActive && <div className={styles.inActive}></div>}
-          <img src={imageLink} alt="video preview" className={styles.image} />
+		{!isActive && <div className={styles.inActive}></div>}
+          <img
+            src={imageLink}
+            alt="video preview"
+            className={styles.image}
+          />
           <div className={styles.playButton} onClick={handlePlay}>
             <svg
               className={styles.playIcon}
@@ -50,13 +50,14 @@ export const VideoItem: FC<VideoItemProps> = ({
           </div>
         </div>
       ) : (
-        <iframe
+        <ReactPlayer
           className={styles.video}
-          src={videoLink}
-          frameBorder="0"
-          allow="autoplay; fullscreen; encrypted-media"
-          allowFullScreen
-          id={`video-${videoId}`}
+          url={videoSrc}
+          playing={isPlaying}
+          controls
+          width="550"
+          height="304"
+          playsinline
         />
       )}
     </div>
