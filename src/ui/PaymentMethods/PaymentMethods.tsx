@@ -13,39 +13,39 @@ import { useTranslations } from "next-intl";
 export const PaymentMethods = () => {
     const videos = [
         {
-          videoSrc: "https://metalabs.kg:8056//videos/video1.mp4",
+          videoSrc: "https://metalabs.kg:8056/videos/video1.mp4",
           imageLink: "/images/payment/mbank.webp",
         },
         {
-          videoSrc: "https://metalabs.kg:8056//videos/video2.mp4",
+          videoSrc: "https://metalabs.kg:8056/videos/video2.mp4",
           imageLink: "/images/payment/mbank_onoi.webp",
         },
         {
-          videoSrc: "https://metalabs.kg:8056//videos/video3.mp4",
+          videoSrc: "https://metalabs.kg:8056/videos/video3.mp4",
           imageLink: "/images/payment/megapay.webp",
         },
         {
-          videoSrc: "https://metalabs.kg:8056//videos/video4.mp4",
+          videoSrc: "https://metalabs.kg:8056/videos/video4.mp4",
           imageLink: "/images/payment/mbank_umai.webp",
         },
         {
-          videoSrc: "https://metalabs.kg:8056//videos/video5.mp4",
+          videoSrc: "https://metalabs.kg:8056/videos/video5.mp4",
           imageLink: "/images/payment/onoi.webp",
         },
         {
-          videoSrc: "https://metalabs.kg:8056//videos/video6.mp4",
+          videoSrc: "https://metalabs.kg:8056/videos/video6.mp4",
           imageLink: "/images/payment/pay24.webp",
         },
         {
-          videoSrc: "https://metalabs.kg:8056//videos/video7.mp4",
+          videoSrc: "https://metalabs.kg:8056/videos/video7.mp4",
           imageLink: "/images/payment/namba_one.webp",
         },
         {
-          videoSrc: "https://metalabs.kg:8056//videos/video8.mp4",
+          videoSrc: "https://metalabs.kg:8056/videos/video8.mp4",
           imageLink: "/images/payment/o_dengi.webp",
         },
         {
-          videoSrc: "https://metalabs.kg:8056//videos/video9.mp4",
+          videoSrc: "https://metalabs.kg:8056/videos/video9.mp4",
           imageLink: "/images/payment/o_terminal.webp",
         },
     ];

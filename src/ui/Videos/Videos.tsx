@@ -27,7 +27,23 @@ const videoBox = [
   {
     videoSrc: "https://metalabs.kg:8056//videos/video13.mp4",
     imageLink: "/images/video4.webp"
-  }
+  },
+  {
+    videoSrc: "https://metalabs.kg:8056//videos/video14.mp4",
+    imageLink: "/images/video5.png"
+  },
+  {
+    videoSrc: "https://metalabs.kg:8056//videos/video15.mp4",
+    imageLink: "/images/video6.png"
+  },
+  {
+    videoSrc: "https://metalabs.kg:8056//videos/video16.mp4",
+    imageLink: "/images/video7.png"
+  },
+  {
+    videoSrc: "https://metalabs.kg:8056//videos/video17.mp4",
+    imageLink: "/images/video8.png"
+  },
 ];
 
 export const Videos: FC = () => {
@@ -35,6 +51,10 @@ export const Videos: FC = () => {
 
   const [activeVideo, setActiveVideo] = useState<string | null>(null)
   const swiperRef = useRef<SwiperType | null>(null);
+
+  const handleSlideChange = () => {
+    setActiveVideo(null); 
+  };
 
   return (
     <section className={styles.videosSection}>
@@ -44,6 +64,7 @@ export const Videos: FC = () => {
         slidesPerView={2.2}
         spaceBetween={25}
         onSwiper={(swiper) => (swiperRef.current = swiper)} 
+        onSlideChange={handleSlideChange} 
         modules={[Pagination, Navigation]}
         simulateTouch={true}  
         allowTouchMove={true}
