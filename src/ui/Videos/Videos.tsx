@@ -30,19 +30,19 @@ const videoBox = [
   },
   {
     videoSrc: "https://metalabs.kg:8056//videos/video14.mp4",
-    imageLink: "/images/video5.png"
+    imageLink: "/images/video5.webp"
   },
   {
     videoSrc: "https://metalabs.kg:8056//videos/video15.mp4",
-    imageLink: "/images/video6.png"
+    imageLink: "/images/video6.webp"
   },
   {
     videoSrc: "https://metalabs.kg:8056//videos/video16.mp4",
-    imageLink: "/images/video7.png"
+    imageLink: "/images/video7.webp"
   },
   {
     videoSrc: "https://metalabs.kg:8056//videos/video17.mp4",
-    imageLink: "/images/video8.png"
+    imageLink: "/images/video8.webp"
   },
 ];
 
@@ -71,7 +71,7 @@ export const Videos: FC = () => {
         touchEventsTarget="container"
         breakpoints={{
           320: {
-            slidesPerView: 1.0,
+            slidesPerView: 1.2,
             spaceBetween: 5,
           },
           431: {
