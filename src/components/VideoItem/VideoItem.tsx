@@ -24,14 +24,14 @@ export const VideoItem: FC<VideoItemProps> = ({ videoSrc, imageLink, isActive })
   return (
     <div className={`${styles.preview} ${isActive ? styles.active : ""}`}>
       {!isPlaying ? (
-        <div className={styles.previewContainer}>
+        <div className={styles.previewContainer} onClick={handlePlay}>
 		{!isActive && <div className={styles.inActive}></div>}
           <img
             src={imageLink}
             alt="video preview"
             className={styles.image}
           />
-          <div className={styles.playButton} onClick={handlePlay}>
+          <div className={styles.playButton}>
             <svg
               className={styles.playIcon}
               viewBox="0 0 73 50"
